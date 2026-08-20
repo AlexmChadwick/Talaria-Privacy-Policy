@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Talaria</title>
+<meta name="description" content="Support for Talaria, an iOS client for the self-hosted Hermes Agent.">
+<style>
+  :root { color-scheme: light dark; --fg:#1c1c1e; --dim:#6b6b70; --bg:#fff; --rule:#e5e5ea; --link:#0066cc; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#f2f2f7; --dim:#9b9ba0; --bg:#000; --rule:#2c2c2e; --link:#4da3ff; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 40rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 2rem; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 .5rem; }
+  h2 { font-size: 1.2rem; letter-spacing: -0.01em; margin: 2.5rem 0 .6rem;
+       padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+  p, li { margin: 0 0 .9rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin-bottom: .6rem; }
+  em { color: var(--dim); font-style: normal; font-size: .9rem; }
+  a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
+  strong { font-weight: 600; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule);
+           color: var(--dim); font-size: .875rem; }
+</style>
+</head>
+<body>
+<main>
+<h1>Talaria — Support</h1>
+<p><em>An iOS client for Hermes Agent, the agent you run on your own computer.</em></p>
+
+<h2>Getting help</h2>
+<p><strong>Email:</strong> <a href="mailto:chadwickalex@icloud.com">chadwickalex@icloud.com</a> — the fastest route, and the one to use for anything involving your own server.</p>
+<p><strong>Report a bug:</strong> <a href="https://github.com/AlexmChadwick/Talaria-Privacy-Policy/issues">open an issue</a>. Please say which iPhone and iOS version, and how you connect (HTTPS, plain HTTP over Tailscale or a LAN, or SSH).</p>
+
+<h2>Talaria needs Hermes Agent running somewhere</h2>
+<p>Talaria is a client, not a service. It connects to <a href="https://github.com/NousResearch/hermes-agent">Hermes Agent</a> running on a computer you control. There is no Talaria account and no server in the middle — if you are not running Hermes, there is nothing for the app to connect to.</p>
+<p>To see how the app works without setting anything up, open it and tap <strong>Look around with sample data</strong> on the first screen.</p>
+
+<h2>It says it cannot connect</h2>
+<p><strong>Over plain HTTP</strong>, Talaria only connects to addresses that cannot leave a private network: Tailscale (<code>.ts.net</code> and the 100.64.0.0/10 range), your LAN, <code>.local</code> names, and localhost over a forwarded port. Anything else has to be HTTPS, because a token sent in the clear over the open internet is a token somebody else can read. If you typed a public hostname with no scheme, the app assumed HTTP and refused — type <code>https://</code> explicitly.</p>
+<p><strong>Over HTTPS with your own certificate</strong>, Talaria will show you the certificate's fingerprint and ask whether to trust it, the same way an SSH client asks about a host key. Once you trust it, that exact certificate is remembered and a different one is refused. If you are reaching the gateway by IP address, note that almost no certificate covers an IP, so this is the path you will take.</p>
+<p><strong>Easiest setup for a machine at home:</strong> Tailscale, then plain HTTP to the <code>.ts.net</code> name. No certificate needed, and the traffic is encrypted by Tailscale.</p>
+
+<h2>The toolbar looks crowded, or a button is missing</h2>
+<p>Fixed in the first update after 0.1. On a small phone at a large text size the server name could crowd out the buttons beside it. If you are on 0.1, a shorter server name in Settings works around it.</p>
+
+<h2>Purchases</h2>
+<p>Everything in the app works without paying. The unlock changes the colour of your sent messages; the tips are support and unlock nothing on their own, except the three largest, which include the colour unlock and say so. <strong>Restore Purchases</strong> is on the same screen, at Settings ▸ Help ▸ Extras.</p>
+
+<h2>Privacy</h2>
+<p>Talaria collects nothing and there is no server operated by the developer. See the <a href="./">privacy policy</a>.</p>
+
+<footer>Talaria is an iOS client for <a href="https://github.com/NousResearch/hermes-agent">Hermes Agent</a>. It is not affiliated with Nous Research.</footer>
+</main>
+</body>
+</html>
