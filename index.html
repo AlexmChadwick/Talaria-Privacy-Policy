@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Talaria</title>
+<meta name="description" content="Privacy policy for Talaria, an iOS client for the self-hosted Hermes Agent.">
+<style>
+  :root { color-scheme: light dark; --fg:#1c1c1e; --dim:#6b6b70; --bg:#fff; --rule:#e5e5ea; --link:#0066cc; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#f2f2f7; --dim:#9b9ba0; --bg:#000; --rule:#2c2c2e; --link:#4da3ff; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 40rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 2rem; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 .5rem; }
+  h2 { font-size: 1.2rem; letter-spacing: -0.01em; margin: 2.5rem 0 .6rem;
+       padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+  p, li { margin: 0 0 .9rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin-bottom: .6rem; }
+  em { color: var(--dim); font-style: normal; font-size: .9rem; }
+  a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
+  strong { font-weight: 600; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule);
+           color: var(--dim); font-size: .875rem; }
+</style>
+</head>
+<body>
+<main>
+<h1>Privacy Policy — Talaria</h1>
+<p><em>Last updated: 19 August 2026</em></p>
+<p>Talaria is a client for <a href="https://github.com/NousResearch/hermes-agent">Hermes Agent</a>, an agent you run on your own computer or server. It is a window onto software you host yourself.</p>
+<h2>Talaria collects nothing</h2>
+<p>The developer receives no data from this app. There is no analytics, no crash reporting, no advertising, and no third-party tracking of any kind. Nothing in the app reports back to the developer, and there is no server operated by the developer for it to report to.</p>
+<p>Every third-party library Talaria includes is published by Apple — SwiftNIO, SwiftNIO SSH, Swift Crypto, Swift ASN.1, Swift Atomics, Swift Collections and Swift System. None of them collects data.</p>
+<h2>Where your data goes</h2>
+<p><strong>To the gateway you configure, and nowhere else.</strong> Your messages, attachments, voice recordings and conversation history are sent to the Hermes gateway whose address you enter — a machine you control. The developer has no access to it.</p>
+<p>If you choose to sign in to Hermes Cloud instead of your own machine, your conversations go to Nous Research and are governed by their privacy policy. That connection is made only if you choose it.</p>
+<h2>What stays on your device</h2>
+<ul>
+<li><strong>Conversation history</strong>, cached so it can be read offline.</li>
+<li><strong>Server addresses and profiles.</strong></li>
+<li><strong>Credentials</strong>, in the iOS keychain. SSH private keys are generated in the Secure Enclave, which means the private half cannot be extracted from the device — not by Talaria, and not by anyone else.</li>
+<li><strong>Known SSH host keys</strong>, so a changed key can be refused.</li>
+<li><strong>Certificate fingerprints</strong> you have chosen to trust for a gateway serving HTTPS with a certificate your device would otherwise reject, so a changed certificate can be refused the same way. Only the fingerprint is kept, and only for a gateway you approved by hand.</li>
+<li><strong>Preferences</strong>, including voice settings.</li>
+</ul>
+<p>Deleting the app removes all of it.</p>
+<h2>Permissions, and why</h2>
+<p>Each is requested only when a feature needs it, and refusing one disables only that feature.</p>
+<ul>
+<li><strong>Microphone</strong> — spoken conversations and voice notes.</li>
+<li><strong>Speech recognition</strong> — turning speech into text. This runs on your phone whenever iOS has the offline language model installed for your language; where it doesn&#x27;t, Apple&#x27;s speech service transcribes the audio, under Apple&#x27;s privacy policy. If you choose &quot;On the server&quot; for speech in Settings instead, the audio goes to your own gateway.</li>
+<li><strong>Photo library and camera</strong> — attaching an image to a message.</li>
+<li><strong>Local network</strong> — reaching a gateway on your own Wi-Fi.</li>
+</ul>
+<h2>Purchases</h2>
+<p>Tips and the optional colour unlock are handled entirely by Apple&#x27;s In-App Purchase system. Talaria never sees a card number or any payment detail. What the app stores is whether an unlock applies to you.</p>
+<h2>Children</h2>
+<p>Talaria is a developer tool and is not directed at children.</p>
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:chadwickalex@icloud.com">chadwickalex@icloud.com</a></p>
+<footer>Talaria is an iOS client for <a href="https://github.com/NousResearch/hermes-agent">Hermes Agent</a>. It is not affiliated with Nous Research.</footer>
+</main>
+</body>
+</html>
